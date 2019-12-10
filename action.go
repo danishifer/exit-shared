@@ -8,13 +8,19 @@ import (
 )
 
 type Action struct {
-	ID               string       `bson:"id"`
-	UserID           UserID       `bson:"userId"`
-	Status           ActionStatus `bson:"status"`
-	Type             string       `bson:"type"`
-	DeviceID         string       `bson:"device"`
-	Date             time.Time    `bson:"date"`
-	ApprovedByPermit string       `bson:"approvedByPermit"`
+	ID       string       `bson:"id"`
+	UserID   UserID       `bson:"userId"`
+	Status   ActionStatus `bson:"status"`
+	Type     string       `bson:"type"`
+	DeviceID string       `bson:"device"`
+	Date     time.Time    `bson:"date"`
+	PermitID string       `bson:"permitId,omitempty"`
+}
+
+type ActionIntent struct {
+	UserID UserID    `json:"user_id"`
+	Type   string    `json:"type"`
+	Date   time.Time `json:"date"`
 }
 
 const (
@@ -22,6 +28,14 @@ const (
 	ActionStatusApproved = 1
 	ActionStatusRejected = 2
 )
+
+func (action *Action) ToActionIntent() ActionIntent {
+	return ActionIntent{
+		UserID: action.UserID,
+		Type:   action.Type,
+		Date:   action.Date,
+	}
+}
 
 func (action *Action) Approve(collection *mongo.Collection, permitID string) (*mongo.UpdateResult, error) {
 	filter := bson.D{{"id", action.ID}}

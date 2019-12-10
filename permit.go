@@ -35,20 +35,7 @@ const (
 	PermitStatusRejected PermitStatus = 2
 )
 
-type PermitForActionRequest struct {
-	UserID UserID    `json:"user_id"`
-	Type   string    `json:"type"`
-	Date   time.Time `json:"date"`
-}
-
-func (request *PermitForActionRequest) IsValid() bool {
-	if request.UserID == "" || request.Type == "" {
-		return false
-	}
-	return true
-}
-
-func (permit *Permit) IsValidForAction(r PermitForActionRequest) bool {
+func (permit *Permit) IsValidForActionIntent(r ActionIntent) bool {
 	// TODO: implement permit validation
 	return true
 }
