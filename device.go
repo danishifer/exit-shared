@@ -3,24 +3,22 @@ package exit_shared_mongo
 import "time"
 
 type Device struct {
-	ID             string         `bson:"id"`
-	Type           string         `bson:"type"`
-	Status         DeviceStatus   `bson:"status"`
-	UserID         UserID         `bson:"userId,omitempty"`
-	CardSerial     string         `bson:"cardSerial,omitempty"`
-	CardNumber     string         `bson:"cardNumber,omitempty"`
-	Metadata       DeviceMetadata `bson:"metadata,omitempty"`
-	ActivationCode string         `bson:"activationCode,omitempty"`
-	APIKey         string         `bson:"apiKey,omitempty"`
-	ActivatedOn    time.Time      `bson:"activatedOn,omitempty"`
-}
-
-type DeviceMetadata struct {
-	DeviceName string `bson:"deviceName"`
-	DeviceInfo string `bson:"deviceInfo"`
+	ID             string       `bson:"id" json:"id"`
+	Type           string       `bson:"type" json:"type"`
+	Status         DeviceStatus `bson:"status" json:"status"`
+	UserID         UserID       `bson:"userId,omitempty" json:"user_id"`
+	CardSerial     string       `bson:"cardSerial,omitempty" json:"card_serial,omitempty"`
+	CardNumber     string       `bson:"cardNumber,omitempty" json:"card_number,omitempty"`
+	DeviceName     string       `bson:"deviceName,omitempty" json:"device_name,omitempty"`
+	DeviceInfo     string       `bson:"deviceInfo,omitempty" json:"device_info,omitempty"`
+	ActivationCode string       `bson:"activationCode,omitempty" json:"activation_code,omitempty"`
+	APIKey         string       `bson:"apiKey,omitempty" json:"api_key,omitempty"`
+	ActivatedOn    time.Time    `bson:"activatedOn,omitempty" json:"activated_on,omitempty"`
+	DeactivatedOn  time.Time    `bson:"deactivatedOn,omitempty" json:"deactivated_on,omitempty"`
 }
 
 const (
-	DeviceStatusUnlinked = 0
-	DeviceStatusLinked   = 1
+	DeviceStatusPendingActivation = 0
+	DeviceStatusActivated         = 1
+	DeviceStatusDeactivated       = 2
 )
