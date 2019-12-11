@@ -13,14 +13,14 @@ type Action struct {
 	Status   ActionStatus `bson:"status",json:"status"`
 	Type     string       `bson:"type",json:"type"`
 	DeviceID string       `bson:"device",json:"device_id"`
-	Date     time.Time    `bson:"date",json:"date"`
+	Date     *time.Time   `bson:"date",json:"date"`
 	PermitID string       `bson:"permitId,omitempty",json:"permit_id"`
 }
 
 type ActionIntent struct {
-	UserID UserID    `json:"user_id"`
-	Type   string    `json:"type"`
-	Date   time.Time `json:"date"`
+	UserID UserID     `json:"user_id"`
+	Type   string     `json:"type"`
+	Date   *time.Time `json:"date"`
 }
 
 const (

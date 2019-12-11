@@ -13,8 +13,8 @@ type Device struct {
 	DeviceInfo     string       `bson:"deviceInfo,omitempty" json:"device_info,omitempty"`
 	ActivationCode string       `bson:"activationCode,omitempty" json:"activation_code,omitempty"`
 	APIKey         string       `bson:"apiKey,omitempty" json:"api_key,omitempty"`
-	ActivatedOn    time.Time    `bson:"activatedOn,omitempty" json:"activated_on,omitempty"`
-	DeactivatedOn  time.Time    `bson:"deactivatedOn,omitempty" json:"deactivated_on,omitempty"`
+	ActivatedOn    *time.Time   `bson:"activatedOn,omitempty" json:"activated_on,omitempty"`
+	DeactivatedOn  *time.Time   `bson:"deactivatedOn,omitempty" json:"deactivated_on,omitempty"`
 }
 
 const (
