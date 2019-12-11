@@ -8,13 +8,13 @@ import (
 )
 
 type Action struct {
-	ID       string       `bson:"id",json:"id"`
-	UserID   UserID       `bson:"userId",json:"user_id"`
-	Status   ActionStatus `bson:"status",json:"status"`
-	Type     string       `bson:"type",json:"type"`
-	DeviceID string       `bson:"device",json:"device_id"`
-	Date     *time.Time   `bson:"date",json:"date"`
-	PermitID string       `bson:"permitId,omitempty",json:"permit_id"`
+	ID       string       `bson:"id" json:"id"`
+	UserID   UserID       `bson:"userId" json:"user_id"`
+	Status   ActionStatus `bson:"status" json:"status"`
+	Type     string       `bson:"type" json:"type"`
+	DeviceID string       `bson:"deviceId" json:"device_id"`
+	Date     *time.Time   `bson:"date" json:"date"`
+	PermitID *string      `bson:"permitId,omitempty" json:"permit_id,omitempty"`
 }
 
 type ActionIntent struct {
