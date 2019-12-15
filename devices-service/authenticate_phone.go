@@ -1,6 +1,6 @@
 package devicesService
 
-import exit "exit-shared-mongo"
+import exit "exit-shared"
 
 type AuthenticatePhoneRequest struct {
 	UserID exit.UserID `json:"user_id" header:"x-exit-user-id" binding:"required"`

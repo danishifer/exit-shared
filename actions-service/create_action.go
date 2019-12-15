@@ -1,11 +1,12 @@
 package actionsService
 
-import exit "exit-shared-mongo"
+import exit "exit-shared"
 
 type CreateActionRequest struct {
-	UserID   exit.UserID `json:"user_id"`
-	Type     string      `json:"type"`
-	DeviceID string      `json:"device_id"`
+	UserID     exit.UserID `json:"user_id"`
+	Type       string      `json:"type"`
+	DeviceID   string      `json:"device_id"`
+	TerminalID string      `json:"terminal_id"`
 }
 
 type CreateActionResponse struct {

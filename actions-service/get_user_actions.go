@@ -1,7 +1,7 @@
 package actionsService
 
 import (
-	exit "exit-shared-mongo"
+	exit "exit-shared"
 	"time"
 )
 

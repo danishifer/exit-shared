@@ -1,4 +1,4 @@
-package exit_shared_mongo
+package exit_shared
 
 import "time"
 

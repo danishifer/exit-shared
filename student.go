@@ -1,4 +1,4 @@
-package exit_shared_mongo
+package exit_shared
 
 type Student struct {
 	ID   UserID `bson:"id" json:"id"`

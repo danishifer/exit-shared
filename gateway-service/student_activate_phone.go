@@ -1,6 +1,6 @@
 package gatewayService
 
-import devicesService "exit-shared-mongo/devices-service"
+import devicesService "exit-shared/devices-service"
 
 type StudentPhoneActivateRequest struct {
 	FamilyName     string `json:"family_name"`

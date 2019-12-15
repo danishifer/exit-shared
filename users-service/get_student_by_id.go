@@ -1,6 +1,6 @@
 package usersService
 
-import exit "exit-shared-mongo"
+import exit "exit-shared"
 
 type GetStudentByIDRequest struct {
 	UserID exit.UserID `json:"user_id"`

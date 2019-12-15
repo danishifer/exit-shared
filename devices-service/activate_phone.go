@@ -1,6 +1,6 @@
 package devicesService
 
-import exit "exit-shared-mongo"
+import exit "exit-shared"
 
 type ActivatePhoneRequest struct {
 	ActivationCode string `json:"activation_code"`
