@@ -38,5 +38,8 @@ const (
 
 func (permit *Permit) IsValidForActionIntent(r ActionIntent) bool {
 	// TODO: implement permit validation
+	if permit.Type != r.Type {
+		return false
+	}
 	return true
 }

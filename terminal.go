@@ -16,6 +16,18 @@ type Terminal struct {
 	Actions      map[string]bool `bson:"actions" json:"actions"`
 }
 
+type TerminalMetadata struct {
+	ID           string `json:"id"`
+	FriendlyName string `json:"friendly_name"`
+}
+
+func (t *Terminal) Metadata() TerminalMetadata {
+	return TerminalMetadata{
+		ID:           t.ID,
+		FriendlyName: t.FriendlyName,
+	}
+}
+
 type CardTerminal struct {
 	Serial string `bson:"serial" json:"serial"`
 	Number string `bson:"number" json:"number"`
