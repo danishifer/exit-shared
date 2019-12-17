@@ -6,7 +6,7 @@ type GetTerminalsMetadataRequest struct {
 }
 
 type GetTerminalsMetadataResponse struct {
-	Terminals []exit.TerminalMetadata
+	Terminals []exit.TerminalMetadata `json:"terminals"`
 }
 
 func (r *GetTerminalsMetadataRequest) IsValid() bool {
