@@ -2,19 +2,19 @@ package actionsService
 
 import exit "exit-shared"
 
-type CreateActionRequest struct {
+type CreateStudentActionWithRequest struct {
 	UserID     exit.UserID `json:"user_id"`
 	Type       string      `json:"type"`
 	DeviceID   string      `json:"device_id"`
 	TerminalID string      `json:"terminal_id"`
 }
 
-type CreateActionResponse struct {
+type CreateActionWithCardResponse struct {
 	Status exit.ActionStatus `json:"status"`
 	Action exit.Action       `json:"action"`
 }
 
-func (r *CreateActionRequest) IsValid() bool {
+func (r *CreateStudentActionWithRequest) IsValid() bool {
 	if r.UserID == "" || r.Type == "" || r.DeviceID == "" {
 		return false
 	}
