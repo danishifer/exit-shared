@@ -1,4 +1,4 @@
-module exit-shared
+module github.com/danishifer/exit-shared
 
 go 1.13
 
