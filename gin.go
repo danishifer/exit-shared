@@ -10,6 +10,8 @@ type Request interface {
 	IsValid() bool
 }
 
+type Response interface{}
+
 // ERRORS
 type ErrorBadRequest struct{}
 

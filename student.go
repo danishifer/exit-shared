@@ -7,7 +7,5 @@ type Student struct {
 		Middle string `bson:"middle" json:"middle"`
 		Family string `bson:"family" json:"family"`
 	} `bson:"name" json:"name"`
-	Homeroom struct {
-		ID string `bson:"id" json:"id"`
-	} `bson:"homeroom" json:"homeroom"`
+	Homeroom string `bson:"homeroom" json:"homeroom"`
 }
