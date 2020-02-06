@@ -22,3 +22,15 @@ const (
 	DeviceStatusActivated         = 1
 	DeviceStatusDeactivated       = 2
 )
+
+type DeviceMetadata struct {
+	ID          string       `json:"id"`
+	Type        string       `json:"type"`
+	Status      DeviceStatus `json:"status"`
+	UserID      UserID       `json:"user_id"`
+	CardSerial  string       `json:"card_serial,omitempty"`
+	CardNumber  string       `json:"card_number,omitempty"`
+	DeviceName  string       `json:"device_name,omitempty"`
+	DeviceInfo  string       `json:"device_info,omitempty"`
+	ActivatedOn *time.Time   `json:"activated_on,omitempty"`
+}
