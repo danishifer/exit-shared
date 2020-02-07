@@ -34,3 +34,8 @@ type DeviceMetadata struct {
 	DeviceInfo  string       `json:"device_info,omitempty"`
 	ActivatedOn *time.Time   `json:"activated_on,omitempty"`
 }
+
+type DeviceDefinition struct {
+	Type string            `bson:"type" json:"type"`
+	Name map[string]string `bson:"name" json:"name"`
+}
