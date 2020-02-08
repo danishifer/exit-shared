@@ -22,10 +22,10 @@ type Permit struct {
 }
 
 type PermitSchedule struct {
-	Repeat        string    `bson:"repeat" json:"repeat"`
-	RepeatEndDate time.Time `bson:"repeatEndDate,omitempty" json:"repeat_end_date"`
-	StartDate     time.Time `bson:"startDate" json:"start_date"`
-	EndDate       time.Time `bson:"endDate" json:"end_date"`
+	Repeat        string     `bson:"repeat" json:"repeat"`
+	RepeatEndDate *time.Time `bson:"repeatEndDate,omitempty" json:"repeat_end_date,omitempty"`
+	StartDate     time.Time  `bson:"startDate" json:"start_date"`
+	EndDate       time.Time  `bson:"endDate" json:"end_date"`
 }
 
 type PermitStatus int32
