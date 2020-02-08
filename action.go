@@ -19,9 +19,9 @@ type Action struct {
 }
 
 type ActionIntent struct {
-	UserID UserID     `json:"user_id"`
-	Type   string     `json:"type"`
-	Date   *time.Time `json:"date"`
+	UserID UserID    `json:"user_id"`
+	Type   string    `json:"type"`
+	Time   time.Time `json:"time"`
 }
 
 const (
@@ -34,7 +34,7 @@ func (action *Action) ToActionIntent() ActionIntent {
 	return ActionIntent{
 		UserID: action.UserID,
 		Type:   action.Type,
-		Date:   action.Date,
+		Time:   action.Date,
 	}
 }
 
