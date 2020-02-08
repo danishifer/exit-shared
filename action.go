@@ -34,7 +34,7 @@ func (action *Action) ToActionIntent() ActionIntent {
 	return ActionIntent{
 		UserID: action.UserID,
 		Type:   action.Type,
-		Time:   action.Date,
+		Time:   *action.Date,
 	}
 }
 
