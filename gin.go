@@ -12,11 +12,14 @@ type Request interface {
 
 type Response interface{}
 
-// ERRORS
-type ErrorBadRequest struct{}
+// Errors
+type FrameworkHTTPError struct {
+	Code    int
+	Message string
+}
 
-func (e *ErrorBadRequest) Error() string {
-	return fmt.Sprint("bad request")
+func (e *FrameworkHTTPError) Error() string {
+	return fmt.Sprintf("framework error [%d]: \"%s\"", e.Code, e.Message)
 }
 
 func DecodeRequest(request Request, c *gin.Context) error {
@@ -31,7 +34,10 @@ func DecodeRequest(request Request, c *gin.Context) error {
 		c.JSON(http.StatusBadRequest, gin.H{
 			"error": "bad request",
 		})
-		return &ErrorBadRequest{}
+		return &FrameworkHTTPError{
+			Code:    http.StatusBadRequest,
+			Message: "bad request",
+		}
 	}
 
 	return nil

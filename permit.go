@@ -12,7 +12,7 @@ type Permit struct {
 	Users        []UserID       `bson:"users" json:"users"`
 	Schedule     PermitSchedule `bson:"schedule" json:"schedule"`
 	Title        string         `bson:"title,omitempty" json:"title,omitempty"`
-	Note         string         `bson:"note" json:"note"`
+	Note         string         `bson:"note,omitempty" json:"note,omitempty"`
 	ApprovedOn   *time.Time     `bson:"approvedOn,omitempty" json:"approved_on"`
 	ApprovedBy   UserID         `bson:"approvedBy,omitempty" json:"approved_by"`
 	ApprovedNote string         `bson:"approvedNote,omitempty" json:"approved_note"`
