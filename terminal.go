@@ -36,3 +36,9 @@ type CardTerminal struct {
 type SocTerminal struct {
 	Version string `bson:"version" json:"version"`
 }
+
+const (
+	TerminalStatusInactive = 0
+	TerminalStatusActive   = 1
+	TerminalStatusDisabled = 2
+)
